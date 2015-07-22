@@ -1,0 +1,4 @@
+Daily challenge222e (Garland words)
+
+this was fairly easy with java, even accounting for the time getting back up to speed with the language
+have to be careful with substrings, need to doublecheck tests (instead of implementing them, ignoring output, then wondering why the test words didn't work like today)
