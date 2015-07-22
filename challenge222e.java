@@ -22,6 +22,7 @@ public class challenge222e{
       }
       else {
         System.out.println("'" +wordIn+ "' is a Garland word of degree " + degree +", (starts and ends with "+ matchChars+")");
+        garlandChain(wordIn,degree);
       }
 
   }
@@ -40,5 +41,23 @@ public class challenge222e{
       }
     }while (checkWord!="");
 
+  }
+  public static void garlandChain(String wordIn, int degree){
+    Scanner in=new Scanner(System.in);
+    do {
+      System.out.println("Please enter the desired length of the chain as an integer.");
+    }while(!in.hasNextInt());
+    int chainLength = in.nextInt();
+    int i;
+    String chain="";
+    for (i=chainLength; i>0;i--){
+      if (chain.isEmpty()){
+        chain=wordIn;
+      }
+      else {
+        chain=chain+wordIn.substring(degree,wordIn.length());
+      }
+    }
+    System.out.println(chain);
   }
 }
