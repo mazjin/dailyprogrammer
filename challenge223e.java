@@ -1,7 +1,11 @@
 
 import java.util.Scanner;
-public class challenge222e{
-  public static void garland(String wordIn) {
+import java.io.IOException;
+import java.io.FileReader;
+import java.io.BufferedReader;
+
+public class challenge223e{
+  public int garland(String wordIn) {
     String startChars="";
     String endChars="";
     String matchChars="";
@@ -17,22 +21,28 @@ public class challenge222e{
             break;
           }
       }
-      if (degree==0){
-        System.out.println("No matches found, "+wordIn+" must not be a Garland word.");
-      }
-      else {
-        System.out.println("'" +wordIn+ "' is a Garland word of degree " + degree +", (starts and ends with "+ matchChars+")");
-        garlandChain(wordIn,degree);
-      }
-
+      //if (degree==0){
+        //System.out.println("No matches found, "+wordIn+" must not be a Garland word.");
+      //}
+      //else {
+        //System.out.println("'" +wordIn+ "' is a Garland word of degree " + degree +", (starts and ends with "+ matchChars+")");
+        //garlandChain(wordIn,degree);
+      //}
+      return degree
   }
   public static void main(String[] args){
     System.out.println("Welcome to the Garland word checker.");
     Scanner in=new Scanner(System.in);
     String checkWord;
     do {
-      System.out.println("Please enter your word,(or nothing if you wish to exit), and press enter.");
-      checkWord = in.nextLine();
+      System.out.println("Please enter either a word to check, any number to find the garland word rankings by degree, or nothing if you wish to exit), and press enter.");
+      if (in.hasNextInt()){
+        rankings();
+        break;
+      }
+      else{
+        checkWord = in.nextLine();
+      }
       if (checkWord.isEmpty()){
         break;
       }
@@ -42,7 +52,7 @@ public class challenge222e{
     }while (checkWord!="");
 
   }
-  public static void garlandChain(String wordIn, int degree){
+  public String garlandChain(String wordIn, int degree){
     Scanner in=new Scanner(System.in);
     do {
       System.out.println("Please enter the desired length of the chain as an integer.");
@@ -58,6 +68,29 @@ public class challenge222e{
         chain=chain+wordIn.substring(degree,wordIn.length());
       }
     }
-    System.out.println(chain);
+    return chain
+  }
+  public static void rankings() throws IOException{
+    FileReader fr = new FileReader("223e-enable1.txt");
+    BufferedReader textReader = new BufferedReader(fr);
+    //TODO: finish implementing filereading and use to generate rankings
+    String line;
+    String largestWords;
+    int largestDegree=0;
+    do {
+      line=textReader.readLine();
+      switch (garland(line)){
+        if garland(line)>largestDegree\
+        {
+          largestDegree=garland(line);
+          largestWords=line;
+        }
+        else if (garland(line)=largestDegree)
+        {
+          largestWords=largestWords + //////// + line;
+        }
+      }
+    } while (line.isEmpty());
+
   }
 }
