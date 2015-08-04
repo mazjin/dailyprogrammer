@@ -1,0 +1,20 @@
+Challenge 226 easy (fractions)
+This was actually fairly simple, few annoying errors:
+
+ - using for loops instead of while loops for the last section of the main
+method caused the for loops to be skipped entirely
+
+  - using Scanner.nextLine() instead of Scanner.next() caused the first value
+read to be automatically filled with something for some reason
+
+Managed to add a function to convert the fractions formed into mixed fractions
+as well, which was pleasingly simple
+
+need to remember to use longs instead of ints for large numbers that still need
+to be used to find a quotient from a / b.
+
+should probably have created a fraction class and taken a more object-orientated
+route through this one
+
+need to look up/practice using arrays, lists, pairs, would probably have made this
+easier or more more efficient
