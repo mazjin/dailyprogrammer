@@ -1,22 +1,22 @@
 import java.util.Scanner;
 public class c226e{
 
-  public static int getNumer(String fraction){
+  public static long getNumer(String fraction){
     int divisorPos=fraction.indexOf("/");
     String numerString=fraction.substring(0,divisorPos);
-    return Integer.valueOf(numerString);
+    return Long.valueOf(numerString);
   }
-  public static int getDenom(String fraction){
+  public static long getDenom(String fraction){
     int divisorPos=fraction.indexOf("/");
     String denomString=fraction.substring(divisorPos+1);
-    return Integer.valueOf(denomString);
+    return Long.valueOf(denomString);
   }
-  public static String addFractions(int numer1, int denom1, int numer2, int denom2){
-    int finalDenom = denom1*denom2;
+  public static String addFractions(long numer1, long denom1, long numer2, long denom2){
+    long finalDenom = denom1*denom2;
     numer1=numer1*denom2;
     numer2=numer2*denom1;
-    int finalNumer=numer1+numer2;
-    int gcd=greatestCommonDivisor(finalNumer,finalDenom);
+    long finalNumer=numer1+numer2;
+    long gcd=greatestCommonDivisor(finalNumer,finalDenom);
     finalNumer=finalNumer/gcd;
     finalDenom=finalDenom/gcd;
     return finalNumer+"/"+finalDenom;
@@ -43,10 +43,14 @@ public class c226e{
       totalFraction=addFractions(getNumer(totalFraction),getDenom(totalFraction),getNumer(fractionsArray[i]),getDenom(fractionsArray[i]));
       i++;
     }
+    String mixed=mixedFraction(totalFraction);
     System.out.println("Final fraction = "+totalFraction);
+    if (!mixed.equals(totalFraction)){
+      System.out.println("as a mixed fraction, "+ mixed);
+    }
   }
-  public static int greatestCommonDivisor(int num1, int num2){
-    int remainder=num1%num2;
+  public static long greatestCommonDivisor(long num1, long num2){
+    long remainder=num1%num2;
     while (remainder!=0){
       num1=num2;
       num2=remainder;
@@ -54,3 +58,18 @@ public class c226e{
     }
     return num2;
   }
+  public static String mixedFraction(String frac){
+    long num=getNumer(frac);
+    long denom=getDenom(frac);
+    long mixedInt=0;
+    if (num>denom){
+      mixedInt=num/denom;
+      num=num%denom;
+    }
+    long gcd=greatestCommonDivisor(num,denom);
+    num=num/gcd;
+    denom=denom/gcd;
+    if (mixedInt==0){return frac;}
+    else{return mixedInt+" "+num+"/"+denom;}
+  }
+}
