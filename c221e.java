@@ -22,14 +22,13 @@ public class c221e{
     int x=0;//x position in array/on grid
     int y=0; //y position in array/on grid
     int dir=1; //defines direction words will form on grid in, 0=right,1=up,2=down,3=left
-    Random rand = new Random(); //instantiates random number generator
     for (String item : wordsIn){
-      System.out.println(item);
+      //System.out.println(item);
       currWord=item.toCharArray();
-      test=in.nextLine();
+      //test=in.nextLine();
       dir=generateDir(dir,item.length(),x,y,output,size);
-      test=in.nextLine();
-      System.out.println(".");
+      //test=in.nextLine();
+      //System.out.println(".");
       if (dir==0){ //forms word left to right
         for (char letter: currWord){
           output[y][x]=letter;
@@ -58,6 +57,10 @@ public class c221e{
         }
         x++; //takes position on grid back to that of last letter; letters must "chain" as part of challenge
       }
+      else{
+        System.out.println("Snake attempted to eat itself");
+        break;
+      }
     }
     String printString=""; //prints grid row by row as a string
     for (char[] row : output){
@@ -69,15 +72,22 @@ public class c221e{
     }
   }
   public static int generateDir(int dirIn,int wordLength, int currX,int currY,char[][] output,int size){ //generates new direction value based on current direction & position and length of current word
-    Random rando = new Random();
     int dirOut=dirIn;
-    //if ((currX==0)&&(currY==0)){return 0;}
-    //else{
-      while(collisionDet(dirOut,currX,currY,wordLength,output,size)){
-        dirOut=rando.nextInt(4);
-        System.out.println(dirOut);
-      }
-    //}
+    boolean coll=true;
+    boolean[] tried = new boolean[4];
+    Arrays.fill(tried,false);
+    boolean[] quitCondition = new boolean[4];
+    Arrays.fill(quitCondition,true);
+    if ((currX==0)&&(currY==0)){return 0;}
+    else{
+      do {
+        tried[dirOut]=true;
+        dirOut=compass(dirIn);
+        coll=collisionDet(dirOut,currX,currY,wordLength,output,size);
+        if (coll&&(tried.equals(quitCondition))){return 5;}
+        System.out.println(coll+","+dirOut+","+currX+","+currY);
+      }while(coll);
+    }
     return dirOut;
   }
   public static boolean collisionDet(int checkDir,int currX,int currY,int length, char[][] output,int size){
@@ -85,35 +95,69 @@ public class c221e{
     int yIncrement=0;
     int xPos=currX;
     int yPos=currY;
-    String test="";
-    Scanner in=new Scanner(System.in);
+    //String test="";
+    //Scanner in=new Scanner(System.in);
     boolean collided=false;
     boolean yoob=false;
     boolean xoob=false;
     switch (checkDir){
       case 0: xIncrement=1;
+              xPos++;
+              break;
       case 1: yIncrement=-1;
+              yPos--;
+              break;
       case 2: yIncrement=1;
+              yPos++;
+              break;
       case 3: xIncrement=-1;
+              xPos--;
+              break;
     }
-    while((xPos<currX+length)&&(yPos<currY+length)){
+    boolean eoy=false;
+    boolean eox=false;
+    do{
+      eoy=(yPos>currY+length-1)||(yPos<currY-length+1);
+      eox=(xPos>currX+length-1)||(xPos<currX-length+1);
       yoob=(yPos<0);
       yoob=yoob || (yPos>=size);
       xoob=(xPos<0);
       xoob=xoob || (xPos>=size);
       if (xoob||yoob){
         collided=true;
-        //break;
+        //System.out.println("OOB at "+xPos+","+yPos);
+        break;
       }
-      else if (String.valueOf(output[yPos][xPos]).equals(".")){
+      else if (!String.valueOf(output[yPos][xPos]).equals(".")){
+        //System.out.println("char at "+xPos+","+yPos);
         collided=true;
-        //break;
+        break;
       }
       xPos=xPos+xIncrement;
       yPos=yPos+yIncrement;
-      System.out.println(collided);
-      test=in.nextLine();
-    }
+      System.out.println(collided+","+xPos+","+yPos);
+    }while(!eoy && !eox);
     return collided;
+  }
+  public static int compass(int dir){
+    Random rando = new Random();
+    int out=rando.nextInt(2);
+
+    switch (dir){
+      case 0:
+              out=out+1;
+              break;
+      case 1:
+              out=out*3;
+              break;
+      case 2:
+              out=out*3;
+              break;
+      case 3:
+              out=out+1;
+              break;
+    }
+    System.out.println(dir+" -> "+out);
+    return out;
   }
 }
