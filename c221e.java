@@ -12,7 +12,7 @@ public class c221e{
     input=input.trim();
     input=input.toUpperCase();
     int size=input.length();
-    output=new char[size][size]; //initialise output array
+    output=new char[size/2][size/2]; //initialise output array
     for (char[] row:output){//fills empty grid with dots for spacing
       Arrays.fill(row,'.');
     }
@@ -23,11 +23,7 @@ public class c221e{
     int dir=1; //defines direction words will form on grid in, 0=right,1=up,2=down
     Random rand = new Random(); //instantiates random number generator
     for (String item : wordsIn){
-      //System.out.println(item);
       currWord=item.toCharArray();
-      /*for (char letter : currWord){
-        System.out.println(letter);
-      }*/
       dir=generateDir(dir,item.length(),y);
       if (dir==0){ //forms word left to right
         for (char letter: currWord){
@@ -35,12 +31,6 @@ public class c221e{
           x++;
         }
         x--; //takes position on grid back to that of last letter; letters must "chain" as part of challenge
-        //if (y<=item.length()){dir=2;} //collision detection with top edge of grid;
-        //else{
-          /*while((dir==0)||((dir==1)&&(y<=item.length()))){
-            dir=rand.nextInt(2); //randomises next word's direction as up or down
-          }*/
-        //}
       }
       else if (dir==1){ //forms word upwards
         for (char letter:currWord){
@@ -48,7 +38,6 @@ public class c221e{
           y--;
         }
         y++; //takes position back as above
-        //dir=0; // sets next word direction to right to avoid collision
       }
       else if (dir==2){ //forms word downwards
         for (char letter:currWord){
@@ -56,7 +45,6 @@ public class c221e{
           y++;
         }
         y--; //takes position back as above
-        //dir=0;//sets next word direction to right to avoid collision
       }
     }
     String printString=""; //prints grid row by row as a string
@@ -68,15 +56,16 @@ public class c221e{
       printString=""; //resets string
     }
   }
-  public static int generateDir(int dirIn,int wordLength, int currY){
+  public static int generateDir(int dirIn,int wordLength, int currY){ //generates new direction value based on current direction & position and length of current word
     Random rando = new Random();
     int dirOut=0;
     if (dirIn==0){
-      while ((dirOut==0)||((dirOut==1)&&(wordLength>=currY))){
+      while ((dirOut==0)||((dirOut==1)&&(wordLength>=currY))){// collision detection with upper edge of grid
         dirOut=rando.nextInt(3);
-        System.out.println("gen:"+dirOut);
+        //System.out.println("gen:"+dirOut);
       }
     }
+    //else{System.out.println("gen:"+dirOut);}
   return dirOut;
   }
 }
