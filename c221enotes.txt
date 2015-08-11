@@ -1,0 +1,18 @@
+Turns out that using the String.split(" ") method is much easier and less
+complicated than trying to cut the string into substrings recursively.
+Really need to work on learning regular expressions.
+----------------------------------------------------------------------
+JESUS. This one was annoying, partially because I only half-learned about most
+of the functions I was using, but mostly because logical operations in java
+always seem a clusterfuck to me unless I separate it out into a million variables,
+which doesn't do a lot for the tidiness of the code.
+
+Ended up learning about/using Arrays(1d, then 2d), characters, switch statements,
+a little more error correction than last time, pseudorandom number generators.
+
+Still feeling like I'm not really doing the whole OO thing yet; hopefully will
+start a challenge soon that lends itself well to starting to do so.
+
+Made sure to clean up & comment code as well as uploading it to github; habits I
+hope to keep from now on. It's probably still unreadable but hopefully better.
+Need to revise the javadoc comment syntax at some point.
