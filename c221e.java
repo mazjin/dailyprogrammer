@@ -20,7 +20,7 @@ public class c221e{
     char[] currWord; //current word being operated on as a character array
     int x=0;//x position in array/on grid
     int y=0; //y position in array/on grid
-    int dir=0; //defines direction words will form on grid in, 0=right,1=up,2=down
+    int dir=1; //defines direction words will form on grid in, 0=right,1=up,2=down
     Random rand = new Random(); //instantiates random number generator
     for (String item : wordsIn){
       //System.out.println(item);
@@ -28,18 +28,19 @@ public class c221e{
       /*for (char letter : currWord){
         System.out.println(letter);
       }*/
+      dir=generateDir(dir,item.length(),y);
       if (dir==0){ //forms word left to right
         for (char letter: currWord){
           output[y][x]=letter;
           x++;
         }
         x--; //takes position on grid back to that of last letter; letters must "chain" as part of challenge
-        if (y<item.length()){dir=2;} //collision detection with top edge of grid;
-        else{
-          while(dir==0){
+        //if (y<=item.length()){dir=2;} //collision detection with top edge of grid;
+        //else{
+          /*while((dir==0)||((dir==1)&&(y<=item.length()))){
             dir=rand.nextInt(2); //randomises next word's direction as up or down
-          }
-        }
+          }*/
+        //}
       }
       else if (dir==1){ //forms word upwards
         for (char letter:currWord){
@@ -47,7 +48,7 @@ public class c221e{
           y--;
         }
         y++; //takes position back as above
-        dir=0; // sets next word direction to right to avoid collision
+        //dir=0; // sets next word direction to right to avoid collision
       }
       else if (dir==2){ //forms word downwards
         for (char letter:currWord){
@@ -55,7 +56,7 @@ public class c221e{
           y++;
         }
         y--; //takes position back as above
-        dir=0;//sets next word direction to right to avoid collision
+        //dir=0;//sets next word direction to right to avoid collision
       }
     }
     String printString=""; //prints grid row by row as a string
@@ -66,5 +67,16 @@ public class c221e{
       System.out.println(printString);
       printString=""; //resets string
     }
+  }
+  public static int generateDir(int dirIn,int wordLength, int currY){
+    Random rando = new Random();
+    int dirOut=0;
+    if (dirIn==0){
+      while ((dirOut==0)||((dirOut==1)&&(wordLength>=currY))){
+        dirOut=rando.nextInt(3);
+        System.out.println("gen:"+dirOut);
+      }
+    }
+  return dirOut;
   }
 }
