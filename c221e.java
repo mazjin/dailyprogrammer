@@ -58,31 +58,10 @@ public class c221e{
         dir=0;
       }
     }
-    /*String[] outString = new String[size];
-    int b=0;
-    for (char[] arr1 : output){
-      for (char letter : arr1){
-        if (String.valueOf(letter)=="null"){
-          outString[b]=outString[b]+".";
-        }
-        else{
-          outString[b]=outString[b]+String.valueOf(letter);
-        }
-      }
-      b++;
-    }
-    for (String arr2 : outString){
-      System.out.println(arr2);
-    }*/
     String printString="";
     for (char[] row : output){
       for (char letter : row){
-        if (letter==' '){
-          printString=printString+".";
-        }
-        else{
-          printString=printString+String.valueOf(letter);
-        }
+        printString=printString+String.valueOf(letter);
       }
       System.out.println(printString);
       printString="";
