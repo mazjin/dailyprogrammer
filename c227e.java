@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 public class c227e{
   public static void main(String[] args) {
-    char[][] grid;
+    int[][] grid;
     Scanner in = new Scanner(System.in);
     int s;
     do{
@@ -13,48 +13,66 @@ public class c227e{
       s++;
       System.out.println("S needs to be an odd number, setting to "+s+" instead");
     }
-    grid=new char[(2*s)-1][(2*s)-1];
+    grid=new int[s][s];
     grid=fillGrid(grid,s);
-    grid[s][s]='X';
     printGrid(grid);
   }
 
 
-  public static char[][] fillGrid(char[][] grid, int s){
-    int count=0;
-    for (char[] row : grid){
-      count=0;
-      //Arrays.fill(row,' ');
-      for (char letter : row){
-        System.out.println("col " + count%2);
-        if (count%2==0){
-          letter='+';
-        }
-        else{
-          letter=' ';
-        }
-        count++;
-      }
+  public static int[][] fillGrid(int[][] grid, int s){
+    for (int[] row : grid){
+      Arrays.fill(row,0);
     }
-    /*for (int j=0;j>=(2*s)-1;j++){
-      for (int i=0;i>=(2*s)-1;i++){
-        if ((i%2==0)&&(j%2==0)){
-          System.out.println("BLONK");
-          grid[j][i]='+';
+    int i=(s-1)/2;
+    int j=(s-1)/2;
+    int count=0;
+    int dir=0;
+    int armLength=1;
+    int armDistance=0;
+    do{
+        System.out.println(i+","+j+","+dir+","+armDistance+","+armLength);
+        grid[j][i]=count;
+        switch (dir){
+          case 0:
+            i++;
+            break;
+          case 1:
+            j--;
+            break;
+          case 2:
+            i--;
+            break;
+          case 3:
+            j++;
+            break;
+
         }
-      }
-    }*/
+        armDistance++;
+        if (armDistance>=armLength){
+          if (dir%2!=0){armLength++;}
+          dir++;
+          armDistance=0;
+        }
+        if (dir>=4){dir=0;}
+        count++;
+    }while (count<(s*s));
+
     return grid;
   }
 
 
 
-  public static void printGrid(char[][] grid){
+  public static void printGrid(int[][] grid){
 
     String outputLine="";
-    for (char[] row : grid){
-      for (char letter : row){
-        outputLine=outputLine+String.valueOf(letter);
+    for (int[] row : grid){
+      for (int value : row){
+        if (value<10){
+          outputLine=outputLine+0+value+" ";
+        }
+        else{
+          outputLine=outputLine+value+" ";
+      }
       }
       System.out.println(outputLine);
       outputLine="";
