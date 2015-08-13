@@ -1,0 +1,12 @@
+Turns out if you're using a literal number (eg 234567890) as a long, you need to
+show it as such using an L, eg 234567890L.
+
+May want to redo with with BigIntegers instead of longs: longs are still to small
+to find the palindrome of 196196871 (should take 45 steps to get to 4478555400006996000045558744,
+only reaches 26 steps)
+
+This was oddly simple & quick: managed to write the vast majority of it in one go
+with 2 minor errors setting strings as numbers and one error with the isPalindromic
+checking subroutine not using equally sized first and last halves.
+
+Finally implemented this one as an object!
