@@ -1,0 +1,13 @@
+Challenge 227 easy- square spirals
+----------------------------------
+This was pretty tricky; yet another situation where I should have been more object-orientated
+in creating my program but didn't, sigh. Had great fun trying to implement the
+coordinate-reading part: need to remember that Scanner.nextLine() hates me.
+Originally intended to make the grid a lot more graphical but proved to be far too
+difficult: for some reason the grid didn't like using a loop to set all of the points
+with odd x and y coordinates to + and all others to spaces. Same idea worked elsewhere,
+so have to wonder what was going on there.
+
+Learned a little about regexes while trying to split the input string: . is any
+character, \d is any digit, \D is any non-digit, and regexes have to be escape-charactered
+even if they already contain a backslash, bizarrely.
