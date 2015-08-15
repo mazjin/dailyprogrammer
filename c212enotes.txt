@@ -1,0 +1,13 @@
+Challenge 212 Easy : Rövarspråket translator
+--------------------------
+
+This one was pretty neat. Finished it in about 40 minutes, which was very nice
+for my confidence. It was a good exercise in creating functions/subroutines
+to clean things up without using complicated new methods. I will have to make sure
+not to shy away from ever using new methods in the future, though.
+
+Might need to stay away from solutions using Arrays.method methods, it seems
+like those are part of Java 8 and I'm on 7 currently.
+
+Bonus exercise is to create a decoder as well as an encoder.
+Should be fairly simple I hope? Will hopefully do later.
