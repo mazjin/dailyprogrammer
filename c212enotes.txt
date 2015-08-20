@@ -11,3 +11,15 @@ like those are part of Java 8 and I'm on 7 currently.
 
 Bonus exercise is to create a decoder as well as an encoder.
 Should be fairly simple I hope? Will hopefully do later.
+-----------------------------------------------
+Tried it a little bit; oddly enough was more difficult than I was expecting.
+Might have to look up StringBuilders; they seem to behave a lot more like Python
+strings, and I am sorely missing some of the default methods in Python at the moment
+(someone posted a one-line in Python that I actually understood and could probably
+have written myself). Might have to refresh my Python knowledge on the next task.
+  --------------------------------
+Got there in the end. Turns out the problem was that the for loop wasn't being
+entered, so replaced it with a do-while loop instead and it was fine except for
+minor problems, e.g. not translating uppercase letters properly.
+
+Done and done!

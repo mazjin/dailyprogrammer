@@ -1,6 +1,0 @@
-Daily Challenge 224
-
-does not truly randomise: rand() function gives semirandom output -> can apparently
-change the seed to fix this, but not sure how this works
-
-fortran was a bad language for this: python or java both handle strings and arrays much more easily, and (i think?) have better built-in random  number generation.
