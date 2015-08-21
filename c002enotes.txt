@@ -1,0 +1,8 @@
+Challenge 002 (easy) : Functional calculator
+-------------------------------------
+Fairly simple; minus some small typos managed to get it working first time through.
+Chose to make a calculator for wages at work, with the bonus extra function being that it
+works in reverse; that is, it calculates how many hours you would have to work to
+get a certain amount. Might actually find this useful to depress myself with when
+considering new purchases (eg. that new iPhone isn't just £629.99, it's 87 hours
+of work).
