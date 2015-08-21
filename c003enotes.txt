@@ -1,0 +1,5 @@
+Challenge 003 (easy): Caesar Cipher
+----------------------------
+Enjoyed testing this one. Couple of problems when using an array to hold the
+alphabet tested against/shifted on in the shift subroutine, few problems with for
+vs do-while loops as per usual, but otherwise just a neat exercise. 
