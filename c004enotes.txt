@@ -1,0 +1,6 @@
+Challenge 004 (easy): Password Generator
+-------------------------
+Again, nice and simple. Put some effort into learning how to use command line
+arguments, which makes testing a bit easier and makes it a bit more... legitimate,
+I suppose, is the word I'm after. Starting to get used to the quirks of Java (eg.
+for loops are not to be trusted).  
