@@ -1,0 +1,9 @@
+Challenge 001 (easy): Taking input
+---------------------------------
+Actually taking the input was trivially simple; the errorcheck loop at the end
+was really annoying to troubleshoot. Need to remember to use String.equals(otherstring)
+to compare instead of ==. Had to look up writing to file for the bonus, not sure I understand
+it super well, so will add that to the list of "Stuff I need to be less terrible
+at". Also haven't written to file in any way incredibly helpful for appending or
+ retrieving data.
+  All in all, fairly simple to implement, considering.
