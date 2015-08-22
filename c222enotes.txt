@@ -1,0 +1,18 @@
+Challenge 222 (easy): Balancing words
+--------------------------------
+This was an interesting one to try and implement without using pen and paper
+(I'm an idiot and left the house without anything to write with). I feel like I
+used too many subroutines to split up what could have been a small, neat, but
+admittedly complicated solution. It would probably have been borderline incomprehensible
+though.
+
+Used the same commandline args technique as the last challenge (228 easy).
+
+Have to keep an eye on what each value actually holds, the issue with using the
+index of each letter in the alphabet string is that "a" should have a score of 1,
+not 0, so I need to remember to add that on every time I print the value, but not
+when retrieving the letter from the String.
+
+All in all, considering I couldn't do this one in java a week ago, I think I did
+pretty well to get it done inside of an hour. Need to make a similar leap to be
+able to tackle the decolumnizing words challenge. 
