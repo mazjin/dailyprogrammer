@@ -1,0 +1,14 @@
+Challenge 229 (easy): Dottie Number (as well as other mathematical limit) finder
+----------------------------------
+Reasonably simple, had some fun faffing around with different number types,
+trying to get them to play nice with each other/the Math functions, but was getting
+pretty huge rounding errors so converted all of them to double.
+
+This was probably a pretty stupid solution in two ways; rounding to a power of
+ten set by the user tends to cause overflow (at least, I'm reasonably sure that's
+what's happening) and mess up the calculation, but unsure as to a better way to
+user-define the rounding/length of the calculation without just saying "loop x
+times". Secondly, the switch case statement in the loop probably slows the
+program down a lot. There is probably a better way to incorporate the different
+functions without using redundant code but couldn't figure one out while quickly
+tidying up after hardcoding each bonus challenge function.
