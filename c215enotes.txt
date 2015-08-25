@@ -1,0 +1,12 @@
+Challenge 215 (easy): Sad cycles
+-------------------------
+Half-learned about a new data structure to do this. ArrayLists are a bit of an
+odd one, not quite got a handle on them yet; they don't share a lot of methods
+with arrays or anything similar.
+
+Lots of annoying fiddly bits to sort out coding
+this, particularly our friend for loops, which managed to put my cycle finding
+subroutine into disarray. I really need to figure out what about the way java
+uses for loops make them not work in the way I expect and screw up my program.
+Also should probably find some rules of thumb for when to use what data structure
+/loop in general.
