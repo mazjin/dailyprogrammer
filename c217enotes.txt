@@ -1,0 +1,13 @@
+Challenge c217e:Lumberjack Stacking Problem
+---------------------------
+AKA, Fun With Loops!
+
+Seriously, so many loops in my implementation here. Seemed to work though.
+Biggest obstacles here were: getting the numbers from the file into the int[] array
+elegantly (solution: I didn't, just made a string array and looped ParseInt from
+one into the other), some array overflow errors because 0 indexes are tricky when
+you've not had enough sleep, and trying to split strings with several spaces
+inbetween numbers. Managed this with some quick regexes, but still wasn't working.
+ I tried some other ways of phrasing the regex in case I'd gotten it wrong, but
+turned out that it was a particular line that started with a space, that when split,
+caused the first string in the array to be an empty string.
