@@ -1,0 +1,5 @@
+Challenge 214 (easy): Standard Deviation
+-------------------------
+Nice and simple, this one. Could probably have worked in some file reading or split
+up the functions more but realistically not much point. No major errors run into,
+didn't really use any new techniques.
