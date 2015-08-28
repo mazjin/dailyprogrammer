@@ -1,0 +1,5 @@
+Challenge 221 (easy): Name game
+--------------------
+Pretty simple. Needed to faff around with adding some more if statements to
+accommodate for names with consonants as their second letters (eg mine) but
+other than that, not much to it to be honest. Need to start on some intermediates.
