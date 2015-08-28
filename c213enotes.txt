@@ -1,0 +1,12 @@
+Challenge 213 (easy): Pronouncing Hex
+--------------------------
+Really liked the idea behind this one. Managed to make it handle all the edge cases
+(e.g. bitey after every bit, EXCEPT when the last digit of the bit is already
+bitey/0) and longer strings of bits. Not 100% sure how to handle bits starting
+with 0, as no rules or examples using it are given. Planned this out on paper a
+few days ago but mostly had to go through solution again (forgot notebook).
+Edge cases took the most effort here; implementing the subroutine to match each
+character to an appropriate string was mostly just busy work.
+  Thinking about it now, I could probably have streamlined it somewhat by using an
+array or list and converting the hex values to grab the correct string, but not sure
+how I would handle the hex part. Might implement that at some point.
