@@ -29,7 +29,7 @@ public class c210e{
   }
   public static String getBinary(long num){
     String binary=Long.toBinaryString(num);
-    while (binary.length()<16){
+    while (binary.length()<32){
       binary="0"+binary;
     }
     return binary;
