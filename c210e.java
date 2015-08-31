@@ -33,19 +33,6 @@ public class c210e{
       binary="0"+binary;
     }
     return binary;
-    int i=31;
-    String binaryNum="";
-    do {
-      if (num>=Math.pow(2,i)){
-        binaryNum+="1";
-        num-=Math.pow(2,i);
-      }
-      else{
-        binaryNum+="0";
-      }
-      i--;
-    } while (i>=0);
-    return binaryNum;
 >>>>>>> master
   }
   public static double getMatchPercentage(String binaryA,String binaryB){
