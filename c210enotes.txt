@@ -1,0 +1,9 @@
+Challenge 210 (easy) : intHarmony
+------------------------------
+Bit of a weird one. Need to go over my binary knowledge a bit more; very rusty.
+Turns out java doesn't exactly "do" unsigned values, made everything a bit of a
+faff to implement, but doesn't seem to have made much difference. Should keep reading
+that CODE book so I understand the principles of these kinds of things more.
+Only major hiccup was the fact that I was trying to implement the solution
+using 8bit binary numbers, when the actual exercises only uses them to illustrate
+the technique and asks you to you 32bit numbers. Still, it works!
