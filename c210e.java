@@ -28,11 +28,19 @@ public class c210e{
     }
   }
   public static String getBinary(long num){
-    String binary=Long.toBinaryString(num);
-    while (binary.length()<16){
-      binary="0"+binary;
-    }
-    return binary;
+    int i=31;
+    String binaryNum="";
+    do {
+      if (num>=Math.pow(2,i)){
+        binaryNum+="1";
+        num-=Math.pow(2,i);
+      }
+      else{
+        binaryNum+="0";
+      }
+      i--;
+    } while (i>=0);
+    return binaryNum;
   }
   public static double getMatchPercentage(String binaryA,String binaryB){
     int i=0;
