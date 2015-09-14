@@ -1,0 +1,7 @@
+Challenge 231 (easy): Cellular Automata (rule 90)
+-------------------------
+Not too difficult this one, though I had some fun trying to get the regex
+to work checking that the inputs were binary strings correctly. Ended up asking
+someone for help and using a regex checker as well as a Pattern class that I've
+never seen or heard of before, which I should probably learn more about. Got there
+in the end though. 
