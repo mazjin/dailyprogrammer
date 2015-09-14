@@ -1,0 +1,6 @@
+Challenge 232 (easy): Palindromes
+---------------------
+Did pretty well with this one. I did see a solution posted within about 2 seconds
+in java that was about 2 lines using heavy regexing but still pretty proud of the
+solution here. Managed to ignore punctuation and numbers and such pretty simply.
+Again, probably a much better way of doing/organising this, but it's done and works.
