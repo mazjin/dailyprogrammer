@@ -9,6 +9,7 @@ Takes arguments
 - length (number of iterations in pattern)
 */
 import java.util.Scanner;
+import java.util.regex.Pattern;
 public class c231e{
   public static void main(String[] args) {
     int searchArray=0;
@@ -23,21 +24,21 @@ public class c231e{
       }
       searchArray++;
     }
-
-    if (inputString.equals("")){ //if no arguments presented, reads input from user
+    Pattern checkBinary=Pattern.compile("[^01]");
+    if (inputString.equals("")||checkBinary.matcher(inputString).matches()){ //if no arguments presented, reads input from user
       Scanner in = new Scanner(System.in);
       do{
         System.out.println("Please enter a binary number of at least 10 digits. Binary numbers must only contain 0s and 1s.");
         inputString=in.next().trim();
-      }while (inputString.equals("")&&inputString.matches(".*[2-9,\\D]+.*"));
+      }while (inputString.equals("")&&checkBinary.matcher(inputString).matches());
     }
 
     for (char digit:inputString.toCharArray()){ //prints input as first line of pattern
       if (digit=='1') {
-        System.out.print("X  ");
+        System.out.print("X");
       }
       else if(digit=='0'){
-        System.out.print("   ");
+        System.out.print(" ");
       }
       //System.out.print(digit+"  ");
     }
@@ -53,10 +54,10 @@ public class c231e{
 
       for (char digit:outputString.toCharArray()){ //prints output for this line
         if (digit=='1') {
-          System.out.print("X  ");
+          System.out.print("X");
         }
         else if(digit=='0'){
-          System.out.print(".  ");
+          System.out.print(" ");
         }
         //System.out.print(digit+"  ");
       }
