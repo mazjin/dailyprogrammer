@@ -24,13 +24,13 @@ public class c231e{
       }
       searchArray++;
     }
-    Pattern checkBinary=Pattern.compile("[^01]");
+    Pattern checkBinary=Pattern.compile(".*[^01].*");
     if (inputString.equals("")||checkBinary.matcher(inputString).matches()){ //if no arguments presented, reads input from user
       Scanner in = new Scanner(System.in);
       do{
         System.out.println("Please enter a binary number of at least 10 digits. Binary numbers must only contain 0s and 1s.");
         inputString=in.next().trim();
-      }while (inputString.equals("")&&checkBinary.matcher(inputString).matches());
+      }while (inputString.equals("")||checkBinary.matcher(inputString).matches());
     }
 
     for (char digit:inputString.toCharArray()){ //prints input as first line of pattern
