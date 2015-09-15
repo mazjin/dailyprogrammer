@@ -1,0 +1,8 @@
+Challenge 005 (easy): Password log-in
+-------------------------
+Pretty simple, had to remember how to use file i/o but wasn't too tricky apart
+from that, seeing the other ostensible half of the program is just a simple
+String.equals function and some other fluff. These earlier challenges are
+definitely easier, I think.
+
+Might come back to implement multiple users at some point. 
