@@ -7,8 +7,6 @@ bonus challenge - maybe a recursive approach possible? Need to come back to this
 
 def c344i(path):#num_inputs=5):
     import numpy as np
-    # available=np.array(input().split(),dtype=int)
-    # mat=np.array([input().split() for x in range(num_inputs)],dtype=int)
     with open(path,'r') as file:
         lines=file.readlines()
     available=np.array(lines[0].replace("\n","").split(),dtype=int)
@@ -32,7 +30,6 @@ def c344i(path):#num_inputs=5):
             break
         incentive=[sum(alloc[x]) if possible[x] \
             else False for x in range (num_inputs)]
-         #sum of resources freed up by completing task
         task_chosen=np.argmax(incentive)
         done[task_chosen]=True
         seq.append(task_chosen)
